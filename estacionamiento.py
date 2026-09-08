@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 from Mensual import Mensual
 from estadia import Estadia
 
@@ -19,7 +20,6 @@ class Nocturno(ModificadorTarifa):
 class FinDeSemana(ModificadorTarifa):
     def aplicar(self, total, horas):
         return total*1.5
-
 
 
 def facturar_estadia(lista_estadias, tarifa_hora):
