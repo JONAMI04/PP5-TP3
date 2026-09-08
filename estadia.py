@@ -1,5 +1,3 @@
-from typing import Any
-
 class Estadia:
     def __init__(self, patente, horas_en_guarda):
         self._dominio = None
@@ -33,7 +31,7 @@ class Estadia:
         self._horas = horas_en_guarda
 
     def agregar_modificador(self, modificador):
-        if not modificador.es_valido():
+        if not hasattr(modificador, "aplicar") or not callable(modificador.aplicar):
             raise TypeError("El modificador no es válido.")
         self._modif.append(modificador)
 

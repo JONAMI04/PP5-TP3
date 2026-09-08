@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-
 from Mensual import Mensual
 from estadia import Estadia
 
@@ -9,9 +8,9 @@ class ModificadorTarifa(ABC):
     def aplicar(self, total: float, horas: int) -> float:
         """Devuelve el nuevo total."""
 
-    def es_valido(self) -> bool:
-        """Devuelve True si el modificador es válido, False en caso contrario."""
-        return True
+
+
+
 
 class Nocturno(ModificadorTarifa):
     def aplicar(self, total, horas):
@@ -20,6 +19,7 @@ class Nocturno(ModificadorTarifa):
 class FinDeSemana(ModificadorTarifa):
     def aplicar(self, total, horas):
         return total*1.5
+
 
 
 def facturar_estadia(lista_estadias, tarifa_hora):
