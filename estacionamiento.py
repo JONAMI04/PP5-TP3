@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-
 from Mensual import Mensual
 from estadia import Estadia
 

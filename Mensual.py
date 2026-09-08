@@ -1,5 +1,3 @@
-from functools import total_ordering
-
 import estadia
 
 class Mensual(estadia.Estadia):

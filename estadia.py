@@ -1,6 +1,3 @@
-from typing import Any
-
-
 class Estadia:
     def __init__(self, patente, horas_en_guarda):
         self._dominio = None
@@ -34,11 +31,9 @@ class Estadia:
         self._horas = horas_en_guarda
 
     def agregar_modificador(self, modificador):
-        try:
-            if modificador.es_valido():
-                self._modif.append(modificador)
-        except TypeError:
-            print("No es modificador no es válido.")
+        if modificador.es_valido():
+            raise ValueError("Error el modificador debe ser una instancia de ModificadorTarifa")
+        self._modif.append(modificador)
 
     def total(self, valor_hora):
         total = 0
